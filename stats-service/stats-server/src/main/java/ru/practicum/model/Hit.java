@@ -9,14 +9,14 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "hit", schema = "public")
+@Table(name = "hit")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Hit {
 
-    @Id()
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
