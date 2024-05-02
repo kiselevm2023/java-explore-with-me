@@ -3,12 +3,14 @@ package ru.practicum.repositiry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 import ru.practicum.model.Hit;
 import ru.practicum.model.ViewStats;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Repository
 public interface HitRepository extends JpaRepository<Hit, Long> {
     @Query("SELECT new ru.practicum.model.ViewStats(hit.app, hit.uri, COUNT(DISTINCT hit.ip)) " +
             "FROM Hit hit " +
