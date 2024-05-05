@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 public class CustomExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(CustomExceptionHandler.class);
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ApiError handleValidationException(MethodArgumentNotValidException ex) {
