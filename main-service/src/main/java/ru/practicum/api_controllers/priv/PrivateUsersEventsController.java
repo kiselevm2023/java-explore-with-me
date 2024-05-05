@@ -21,7 +21,7 @@ public class PrivateUsersEventsController {
 
     private final EventService eventService;
 
-    @GetMapping()
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     List<EventShortDto> getUserEvents(@PathVariable Long userId,
                                       @PositiveOrZero @RequestParam(value = "from", defaultValue = "0") int from,
@@ -31,7 +31,7 @@ public class PrivateUsersEventsController {
         return eventService.getUserEvents(userId, from, size);
     }
 
-    @PostMapping()
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     EventFullDto createUserEvent(@PathVariable Long userId, @Valid @RequestBody NewEventDto newEventDto) {
 

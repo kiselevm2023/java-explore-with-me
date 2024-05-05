@@ -2,6 +2,7 @@ package ru.practicum.locations.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.locations.dto.LocationDto;
 import ru.practicum.locations.mapper.LocationMapper;
 import ru.practicum.locations.model.Location;
@@ -9,6 +10,7 @@ import ru.practicum.locations.repository.LocationRepo;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class LocationServiceImpl implements LocationService {
 
     private final LocationRepo locationRepo;

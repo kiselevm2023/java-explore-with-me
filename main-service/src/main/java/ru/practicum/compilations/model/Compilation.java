@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import lombok.ToString;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 import ru.practicum.events.model.Event;
 
 @Entity
-@Table(name = "compilations", schema = "public")
+@Table(name = "compilations")
 @Data
 @Builder
 @NoArgsConstructor
@@ -36,5 +37,6 @@ public class Compilation {
             name = "compilation_events",
             joinColumns = {@JoinColumn(name = "compilation_id")},
             inverseJoinColumns = {@JoinColumn(name = "event_id")})
+    @ToString.Exclude
     private List<Event> events;
 }

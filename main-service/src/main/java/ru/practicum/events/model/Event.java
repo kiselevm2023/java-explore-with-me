@@ -7,17 +7,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import ru.practicum.categories.model.Category;
 import ru.practicum.locations.model.Location;
 import ru.practicum.statuses.EventState;
 import ru.practicum.users.model.User;
 
 @Entity
-@Table(name = "events", schema = "public")
+@Table(name = "events")
 @Data
 @Builder
 @NoArgsConstructor
@@ -55,15 +52,18 @@ public class Event {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     @NotNull(message = "Category не может быть пустым")
+    @ToString.Exclude
     private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id")
     @NotNull(message = "Location не может быть пустым")
+    @ToString.Exclude
     private Location location;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "initiator_id")
+    @ToString.Exclude
     private User initiator;
 
     @Column(name = "confirmed_requests")

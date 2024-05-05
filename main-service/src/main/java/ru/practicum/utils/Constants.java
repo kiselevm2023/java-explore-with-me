@@ -1,7 +1,10 @@
 package ru.practicum.utils;
 
+import lombok.experimental.UtilityClass;
+
 import java.time.LocalDateTime;
 
+@UtilityClass
 public class Constants {
 
     public static final String THE_REQUIRED_OBJECT_WAS_NOT_FOUND = "The required object was not found.";

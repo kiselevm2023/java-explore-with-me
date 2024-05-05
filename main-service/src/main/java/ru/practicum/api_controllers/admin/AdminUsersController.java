@@ -22,7 +22,7 @@ public class AdminUsersController {
     private final UserService userService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping()
+    @PostMapping
     public UserDto createUser(@Valid @RequestBody NewUserRequest newUserRequest) {
         log.info("Post request /admin/users, newUserRequest: {}", newUserRequest);
 
@@ -36,7 +36,7 @@ public class AdminUsersController {
         userService.deleteUser(userId);
     }
 
-    @GetMapping()
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<UserDto> getUsers(@RequestParam(value = "ids", required = false) List<Long> ids,
                                   @PositiveOrZero @RequestParam(value = "from", defaultValue = "0") Integer from,

@@ -11,7 +11,9 @@ import ru.practicum.statuses.EventState;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface EventRepo extends JpaRepository<Event, Long> {
 
     Optional<Event> findByIdAndState(long id, EventState eventState);
