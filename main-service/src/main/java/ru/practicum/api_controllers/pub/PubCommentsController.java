@@ -18,7 +18,7 @@ import java.util.List;
 public class PubCommentsController {
     private final CommentsService commentsService;
 
-    @GetMapping()
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<CommentDto> getCommentsByEvent(@RequestParam Long eventId,
                                                @PositiveOrZero @RequestParam(value = "from", defaultValue = "0") int from,
