@@ -1,3 +1,3 @@
 # java-explore-with-me
 Template repository for ExploreWithMe project.
-Link for Pull request ExploreWithMe project:  https://github.com/kiselevm2023/java-explore-with-me/pull/5
+Приложение "Explore With Me" — афиша. В этой афише можно предложить какое-либо событие от выставки до похода в кино и собрать компанию для участия в нём.
